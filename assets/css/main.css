@@ -1,0 +1,153 @@
+:root {
+    /* Backgrounds */
+    --bg-main: #f4f7f6;
+    --bg-surface: #ffffff;
+    
+    /* Brand Colors */
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --secondary-color: #6c757d;
+    --secondary-hover: #5a6268;
+    
+    /* Text Colors */
+    --text-main: #333333;
+    --text-muted: #aaaaaa;
+    --text-dark: #000000;
+    --text-light: #ffffff;
+    
+    /* Borders & Shadows */
+    --border-input: #cccccc;
+    --border-card: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --shadow-heavy: rgba(0, 0, 0, 0.3);
+    
+    /* Overlays */
+    --overlay-bg: rgba(0, 0, 0, 0.6);
+}
+
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+.search-bar {
+    margin-top: 15px;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid var(--border-input);
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+}
+
+button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button.secondary {
+    background-color: var(--secondary-color);
+}
+
+button.secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pin-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-card);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px var(--shadow-light);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px var(--shadow-medium);
+}
+
+.pin-card h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-bg);
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: var(--bg-surface);
+    color: var(--text-main);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 60%;
+    max-width: 600px;
+    box-shadow: 0 5px 15px var(--shadow-heavy);
+}
+
+.close-button {
+    color: var(--text-muted);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+    transition: color 0.2s;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--text-dark);
+    text-decoration: none;
+}
