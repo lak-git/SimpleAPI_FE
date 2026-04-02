@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-import time
 
 
 BASE_URL = "http://127.0.0.1:5500"
@@ -81,18 +80,15 @@ def test_PFE04(driver):
         EC.element_to_be_clickable((By.CLASS_NAME, "pin-card"))
     )
     pin.click()
-    time.sleep(2)
 
     overlay = WebDriverWait(driver, WAIT_TIME).until(
         EC.element_to_be_clickable((By.ID, "pin-modal"))
     )
     driver.execute_script("arguments[0].click();", overlay)
-    time.sleep(2)
 
     WebDriverWait(driver, WAIT_TIME).until(
         EC.invisibility_of_element_located((By.ID, "pin-modal"))
     )
-    time.sleep(2)
 
     assert not driver.find_element(By.ID, "pin-modal").is_displayed(), "Modal should be hidden but is still visible"
 
