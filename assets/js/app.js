@@ -79,7 +79,7 @@ async function fetchAndDisplayPins(filterQuery = "") {
         });
     } catch (error) {
         console.error("Error fetching pins:", error);
-        container.innerHTML = `<p style="color:red;">Failed to load pins. Did you fix the CORS issue on the backend?</p>`;
+        container.innerHTML = `<p style="color:red;">Failed to load pins.</p>`;
     }
 }
 
